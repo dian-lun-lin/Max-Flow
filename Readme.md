@@ -22,4 +22,4 @@ You will see the executable under `bin/`.
 ./each_batch.sh -i input_dir -g golden_dir
 ```
 
-This script will run first file in each benchmark. For example, ```./run_batch.sh -i ./dataset -g ./dataset``` will run ```./dataset/BVZ-sawtooth0.max , ./dataset/BVZ-tsukuba1.max ...```
+This script will run first file in each benchmark. For example, ```./each_batch.sh -i ./dataset -g ./dataset``` will run ```./dataset/BVZ-sawtooth0.max , ./dataset/BVZ-tsukuba1.max ...```
