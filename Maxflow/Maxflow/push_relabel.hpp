@@ -26,7 +26,7 @@ bool push(
   const int src,
   const int tgt,
   const std::vector<int>& h,
-  std::vector<std::map<int, int> >& residual,
+  std::vector<std::unordered_map<int, int> >& residual,
   std::vector<int>& exec,
   std::queue<int>& exec_vertices,
   std::vector<bool>& active
@@ -49,7 +49,7 @@ int pr_method(int src, int tgt, const Graph& g) {
 
   int max_n = g.size();
 
-  std::vector<std::map<int, int> > residual(max_n);
+  std::vector<std::unordered_map<int, int> > residual(max_n);
 
   for(const auto& node : g) {
     for(const auto& edge : node) {
@@ -117,7 +117,7 @@ bool push(
   const int src,
   const int tgt,
   const std::vector<int>& h,
-  std::vector<std::map<int, int> >& residual,
+  std::vector<std::unordered_map<int, int> >& residual,
   std::vector<int>& exec,
   std::queue<int>& exec_vertices,
   std::vector<bool>& active

@@ -13,7 +13,7 @@
 #include <cstring>
 #include <Maxflow/utility/utility.hpp>
 #include <Maxflow/utility/graph.hpp>
-#include <map>
+#include <unordered_map>
 
 namespace std {
   namespace fs = experimental::filesystem;
@@ -29,7 +29,7 @@ int ff_method(const int src, const int tgt, const Graph& g, const bool is_bfs = 
 bool find_path_bfs(
   const int src,
   const int tgt,
-  const std::vector<std::map<int, int> >& residual,
+  const std::vector<std::unordered_map<int, int> >& residual,
   const int MAX_N,
   std::vector<int>& parent
 );
@@ -37,7 +37,7 @@ bool find_path_bfs(
 bool find_path_dfs(
   const int src,
   const int tgt,
-  const std::vector<std::map<int, int> >& residual,
+  const std::vector<std::unordered_map<int, int> >& residual,
   const int MAX_N,
   std::vector<int>& parent
 );
@@ -65,7 +65,7 @@ int ff_method(const int src, const int tgt, const Graph& g, const bool is_bfs) {
   int max_n = g.size();
   int MAX_FLOW{0};
 
-  std::vector<std::map<int, int> > residual(max_n);
+  std::vector<std::unordered_map<int, int> > residual(max_n);
 
   for(const auto& node : g) {
     for(const auto& edge : node) {
@@ -76,7 +76,7 @@ int ff_method(const int src, const int tgt, const Graph& g, const bool is_bfs) {
     }
   }
 
-  std::function<bool(const int, const int, const std::vector<std::map<int, int> >&, const int, std::vector<int>&)> find_path;
+  std::function<bool(const int, const int, const std::vector<std::unordered_map<int, int> >&, const int, std::vector<int>&)> find_path;
   if(is_bfs) {
     find_path = find_path_bfs;
   }
@@ -108,7 +108,7 @@ int ff_method(const int src, const int tgt, const Graph& g, const bool is_bfs) {
 bool find_path_bfs(
   const int src,
   const int tgt,
-  const std::vector<std::map<int, int> >& residual,
+  const std::vector<std::unordered_map<int, int> >& residual,
   const int max_n,
   std::vector<int>& parent
 ) {
@@ -136,7 +136,7 @@ bool find_path_bfs(
 bool find_path_dfs(
   const int src,
   const int tgt,
-  const std::vector<std::map<int, int> >& residual,
+  const std::vector<std::unordered_map<int, int> >& residual,
   const int max_n,
   std::vector<int>& parent
 ) {
