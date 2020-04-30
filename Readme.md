@@ -27,6 +27,7 @@ This script will run first file in each benchmark. For example, ```./each_batch.
 #Results(ms)
 
 | Benchmark    | BFS  | DFS | Push-Relabel | Boykov-Kolmogorov |
+| :-:          | :-: | :-: | :-: | :-: |
 | BVZ-tsukuba  |x|x| 69625  | 1595  |
 | BVZ-sawtooth |x|x| 50418  | 3774  |
 | BVZ-venus    |x|x| 75612  | 2850  |
